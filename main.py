@@ -1,21 +1,25 @@
+import requests
+import uvicorn
+import subprocess
+import os
+
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import Response, RedirectResponse, FileResponse
 
 from skinpy import Skin
 from PIL import Image
-from providers import skins
-
-import requests
 from io import BytesIO
-import uvicorn
+
+from providers import skins
 
 import config
 
 
+subprocess.run(args="cls" if os.name == "nt" else "clear", shell=True)
+
 app = FastAPI(
     title="Head Server",
-    description="The All-In-One Minecraft Head/Face Skin Server!",
-    version="0.1.0"
+    description="The All-In-One Minecraft Head/Face Skin Server!"
 )
 
 @app.get("/favicon.ico", include_in_schema=False)
