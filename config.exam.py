@@ -19,20 +19,25 @@ fallbacks = [
 # Skin Mode
 # How Skin Will Reply To Client
 # Options (Don't Care About Cases)
-# head: Return Player Face
+# [SOON] head: Return Player Face
 # head-1-8: Return 1.8 Style Of Player Face (No Layer 2)
-# head-br: Return Bedrock Style Head (Minecraft Bedrock Marketplace Are Crazy That Player Head Model Can Be Changed)
-# head-3d: Return Player 3D Head (Like Skull In Minecraft That Turn Right)
-# head-3d-l: Like head-3d But The Resault Turn Left
-skin_mode = "HEAD-1-8"
+# [SOON] head-3d: Return Player 3D Head (Like Skull In Minecraft That Turn Right)
+# [SOON] head-3d-l: Like head-3d But The Resault Turn Left
+# Can Be Override By ?mode= Args
+default_skin_mode = "HEAD-1-8"
 
 # Recommend To Enable This Because Some Service Have Redirect
 follow_redirects = True
 
 # We Saperate Bedrock Skin Service Because Bedrock API Are Threat Differently
 # If You Enable This We Will Auto-Add Bedrock API (By Geyser) Into The Fallback List
-# Usually After default
+# Usually After default (But You Can Override The Order By Add bedrock Into The fallbacks)
 enable_bedrock_skin = True
+
+# Bedrock Players Usually Have Prefix (Floodgate)
+# If This Prefix Was Found We Will Immediately Throw The Name To Geyser First
+# If You Running Pure Bedrock Server Leave This Blank
+bedrock_prefix = "."
 
 # Some Skin API Might Need User Agent... This Is Default One
 user_agent = "PrayoadMii Head Server"

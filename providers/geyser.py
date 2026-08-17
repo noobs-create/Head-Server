@@ -2,12 +2,12 @@ import requests
 
 from libs import console
 
-def reslove_geyser_url(gamertag: str):
+def resolve_geyser_url(gamertag: str):
     console.log(f"Getting Skins For: {str(gamertag)}")
 
     try:
         pending_xuid = requests.get(
-            url=f"https://api.geysermc.org/v2/xbox/xuid/{gamertag}",
+            url=f"https://api.geysermc.org/v2/xbox/xuid/{str(gamertag)}",
             timeout=10
         )
         pending_xuid.raise_for_status()
