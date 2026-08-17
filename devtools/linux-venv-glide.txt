@@ -1,0 +1,8 @@
+# Create (Create ENV)
+python3 -m venv .venv
+
+# Activate (Join Current Terminal Into ENV)
+source .venv/bin/activate
+
+# Deactivate (Exit From ENV)
+deactivate
