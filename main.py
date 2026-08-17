@@ -26,6 +26,13 @@ app = FastAPI(
 def favicon():
     return FileResponse("favicon.ico")
 
+@app.get("/", include_in_schema=False)
+def favicon():
+    return RedirectResponse(
+        "https://github.com/noobs-create/Head-Server",
+        status_code=302
+    )
+
 def normalize_skin(image: Image.Image):
     image = image.convert("RGBA")
 
