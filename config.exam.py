@@ -7,11 +7,13 @@
 
 # For Default... The Direct URL Are Supported
 # But If You Want Mojang API Enter "mojang" As Default Setting
+# Also "bedrock" Will Mean To Bedrock Skin
 # Because For Mojang Players We Need To Request For UUID First
 default = "mojang"
 
-# mojang Also Work Inside Here Too
+# mojang And bedrock Also Work Inside Here Too
 fallbacks = [
+    "bedrock",
     "http://skinsystem.ely.by/skins/{username}.png",
     "https://auth.tlauncher.org/skin/fileservice/skins/skin_{username}.png"
 ]
@@ -26,21 +28,13 @@ fallbacks = [
 # Can Be Override By ?mode= Args
 default_skin_mode = "HEAD-1-8"
 
-# Recommend To Enable This Because Some Service Have Redirect
-follow_redirects = True
-
-# We Saperate Bedrock Skin Service Because Bedrock API Are Threat Differently
-# If You Enable This We Will Auto-Add Bedrock API (By Geyser) Into The Fallback List
-# Usually After default (But You Can Override The Order By Add bedrock Into The fallbacks)
-enable_bedrock_skin = True
-
 # Bedrock Players Usually Have Prefix (Floodgate)
 # If This Prefix Was Found We Will Immediately Throw The Name To Geyser First
 # If You Running Pure Bedrock Server Leave This Blank
 bedrock_prefix = "."
 
 # Some Skin API Might Need User Agent... This Is Default One
-user_agent = "PrayoadMii Head Server"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
 
 # Where WebServer Will Bind On?
 host = "0.0.0.0"
