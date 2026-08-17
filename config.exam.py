@@ -7,15 +7,17 @@
 
 # For Default... The Direct URL Are Supported
 # But If You Want Mojang API Enter "mojang" As Default Setting
-# Also "bedrock" Will Mean To Bedrock Skin
 # Because For Mojang Players We Need To Request For UUID First
+# Also "bedrock" Will Mean To Bedrock Skin
 default = "mojang"
 
 # mojang And bedrock Also Work Inside Here Too
+# If You Need Skin System That Require Logics (Get UUID From Name -> Texture ID -> API -> Bra Bra Bra)
+# You Will Need To Fork This Project
 fallbacks = [
-    "bedrock",
     "http://skinsystem.ely.by/skins/{username}.png",
-    "https://auth.tlauncher.org/skin/fileservice/skins/skin_{username}.png"
+    "https://auth.tlauncher.org/skin/fileservice/skins/skin_{username}.png",
+    "bedrock"
 ]
 
 # Skin Mode

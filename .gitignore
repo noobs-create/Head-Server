@@ -159,6 +159,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Uhh...
+# Runtime Files That You Don't Need Them On GitHub
 config.py
 test.png

@@ -1,11 +1,11 @@
 If You Don't Know Who To Test This Service With
-There Are A Rat Test List For You!
+There Are A Rat List For You!
 Mostly They're My Friends :P
 
-Notch (Mojang)
-tofukung (Mojang)
 PrayoadMii (Ely.By, TLauncher)
 LilacCard522 (Bedrock)
+Notch (Mojang)
+tofukung (Mojang)
 AtomPWTChannel (Ely.By)
 CxllmeDark (Mojang)
 yoo12a1 (TLauncher)

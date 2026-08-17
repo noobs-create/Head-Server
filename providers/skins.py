@@ -56,16 +56,10 @@ def resolve_skin_url(username: str):
             response.raise_for_status()
 
             return skin_url
-
         except Exception as e:
-            console.warn(
-                f"Skin Provider Failed For {str(provider)} Got {str(e)}"
-            )
+            console.warn(f"Skin Provider Failed For {str(provider)} Got {str(e)}")
 
             continue
-
-    console.warn(
-        f"Could Not Find A Skin For {str(username)}"
-    )
+    console.warn(f"Could Not Find A Skin For {str(username)}")
 
     return None
