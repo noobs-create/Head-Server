@@ -12,24 +12,22 @@ def resolve_skin_url(username: str):
 
     providers = [config.default] + config.fallbacks
 
+    if username.startswith(str(config.bedrock_prefix)):
+        console.info(f"{str(username)} Might Be A Bedrock Player! Threating Them As Bedrock Player!")
+
+        skin_url = resolve_geyser_url(username.removeprefix(str(config.bedrock_prefix)))
+
+        if skin_url is None:
+            console.warn(f"Actually... {str(username)} Is Not Bedrock Player... Fixing It...")
+
+            username = username.removeprefix(str(config.bedrock_prefix))
+        else:
+            console.log(f"Found {str(username)} As Bedrock Skin!")
+            
+            return skin_url
+
     for provider in providers:
         try:
-            if username.startswith(str(config.bedrock_prefix)):
-                console.info(f"{str(username)} Might Be A Bedrock Player! Threating Them As Bedrock Player!")
-
-                skin_url = resolve_geyser_url(username.removeprefix(str(config.bedrock_prefix)))
-
-                if skin_url is None:
-                    console.warn(f"Actually... {str(username)} Is Not Bedrock Player... Fixing It...")
-
-                    username = username.removeprefix(str(config.bedrock_prefix))
-
-                    continue
-
-                console.log(f"Found {str(username)} As Bedrock Skin!")
-                
-                return skin_url
-
             if provider.lower() == "bedrock":
                 skin_url = resolve_geyser_url(username.removeprefix(str(config.bedrock_prefix)))
 
