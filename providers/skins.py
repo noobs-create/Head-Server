@@ -15,13 +15,19 @@ def resolve_skin_url(username: str):
     for provider in providers:
         try:
             if username.startswith(str(config.bedrock_prefix)):
-                console.info(f"{str(username)} Might Be A Bedrock Player! Threating Them!")
+                console.info(f"{str(username)} Might Be A Bedrock Player! Threating Them As Bedrock Player!")
 
                 skin_url = resolve_geyser_url(username.removeprefix(str(config.bedrock_prefix)))
 
                 if skin_url is None:
+                    console.warn(f"Actually... {str(username)} Is Not Bedrock Player... Fixing It...")
+
+                    username = username.removeprefix(str(config.bedrock_prefix))
+
                     continue
 
+                console.log(f"Found {str(username)} As Bedrock Skin!")
+                
                 return skin_url
 
             if provider.lower() == "bedrock":
@@ -30,6 +36,8 @@ def resolve_skin_url(username: str):
                 if skin_url is None:
                     continue
 
+                console.log(f"Found {str(username)} As Bedrock Skin!")
+                
                 return skin_url
             
             if provider.lower() == "mojang":
@@ -38,12 +46,11 @@ def resolve_skin_url(username: str):
                 if skin_url is None:
                     continue
 
+                console.log(f"Found {str(username)} As Mojang Skin!")
+                
                 return skin_url
 
-            skin_url = provider.replace(
-                "{username}",
-                username
-            )
+            skin_url = provider.replace("{username}", username)
 
             response = requests.get(
                 skin_url,
@@ -54,6 +61,8 @@ def resolve_skin_url(username: str):
             )
 
             response.raise_for_status()
+
+            console.log(f"Found {str(username)} On Other Skin Service With URL {str(skin_url)}")
 
             return skin_url
         except Exception as e:

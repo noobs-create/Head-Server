@@ -46,7 +46,7 @@ def get_head(username: str, mode: str = Query(default=None)):
     ):
         raise HTTPException(
             status_code=400,
-            detail=f"Unsupported skin mode: {skin_mode}"
+            detail=f"Unsupported Skin Mode: {skin_mode}"
         )
 
     skin_url = skins.resolve_skin_url(
@@ -56,7 +56,7 @@ def get_head(username: str, mode: str = Query(default=None)):
     if skin_url is None:
         raise HTTPException(
             status_code=404,
-            detail=f"Could not find skin for {username}"
+            detail=f"Could Not Find Skin For {username}"
         )
 
     try:
